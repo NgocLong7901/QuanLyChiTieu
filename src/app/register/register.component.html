@@ -1,0 +1,26 @@
+<div class="block-center">
+    <form class="register-form" [formGroup]="registerForm">
+        <div class="text">
+            <p>ĐĂNG KÝ</p>
+        </div>
+        <div class="txt-field">
+            <input type="text" formControlName="fullname" placeholder="Họ và tên">
+            <span></span>
+        </div>
+        <div class="txt-field">
+            <input type="text" formControlName="phonenumber" placeholder="SĐT">
+            <span></span>
+        </div>
+        <div class="txt-field">
+            <input type="text" formControlName="username" placeholder="Tên đăng nhập">
+            <span></span>
+        </div>
+        <div class="txt-field">
+            <input type="password" formControlName="password" placeholder="Mật khẩu">
+            <span></span>
+        </div>
+        <div>{{message}}</div>
+        <input type="submit" value="Đăng ký">
+        <input [routerLink]="['/login']" type="submit" value="Trở về">
+    </form>
+</div>

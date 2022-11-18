@@ -1,0 +1,100 @@
+.block-center {
+    width: 500px;
+    background-color: var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 80px auto;
+    background-color: #fff;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.text {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 30px;
+}
+
+
+.register-form {
+    /* padding: 30px;
+    border-radius: 50px;
+
+    margin-left: 30%;
+    margin-right: 30%; */
+    padding: 0 32px;
+
+}
+
+.block-center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.register-form .txt-field {
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt-field input {
+    width: 100%;
+    padding: 0 15px;
+    height: 30px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+/* .txt-field label {
+    position: absolute;
+    top: 45%;
+    left: 5px;
+    color: black;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+    transition: .5s;
+} */
+
+/* .txt-field span {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: blueviolet;
+
+} */
+/* 
+.txt-field input:focus~label,
+.txt-field input:valid~label {
+    top: -5px;
+    color: #2691d9;
+}
+
+.txt-field input:focus~span::before,
+.txt-field input:valid~span::before {
+    width: 100%;
+} */
+
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    margin-bottom: 16px;
+    
+}
+
+input[type="submit"]:hover {
+    border-color: #2691d9;
+    transition: .5s;
+}
