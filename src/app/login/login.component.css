@@ -16,8 +16,9 @@
     text-align: center;
     font-size: 2.2rem;
     font-weight: 400;
-    color: var(--text-color);
+    color: var(--primary-color);
     margin-top: 30px;
+    user-select: none;
 }
 
 .txt-field__handler {
@@ -25,8 +26,7 @@
 }
 
 .login-form .txt-field {
-    border-bottom: 2px solid #adadad;
-    margin: 30px 0;
+    margin: 15px 0;
 }
 
 .txt-field input {
@@ -64,6 +64,7 @@ input[type="submit"]:hover {
     text-align: center;
     font-size: 20px;
     color:#000;
+    user-select: none;
 }
 
 .signup-link a {
@@ -72,5 +73,5 @@ input[type="submit"]:hover {
 }
 
 .signup-link a:hover {
-   color: #ec6f56;
+   color: #e97a64;
 }

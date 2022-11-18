@@ -1,52 +1,55 @@
-#body{
-    width: 191px;  
+.body {
+    width: 191px;
     display: flex;
-    
 }
-.taskbar{
+
+.taskbar {
     position: relative;
-    background-color:darkkhaki;
+    background-color: var(--star-gold-color);
     float: left;
     width: 200px;
     padding: 15px;
-    height:100%;
-    
+    height: 100%;
+    margin-top: 51px;
 }
 
-.welcome{
+.welcome {
     font-size: 18px;
     padding-top: 0px;
     font-family: sans-serif;
-
 }
 
-.welcome button{
+.welcome button {
     width: 70%;
     height: 30px;
-    border: 1px solid;
+    border: none;
     background: #2691d9;
     border-radius: 25px;
-    font-size: 18px;
+    font-size: 1.6rem;
     color: #e9f4fb;
     font-weight: 700;
     cursor: pointer;
     outline: none;
-    font-family: sans-serif;  
+    font-family: sans-serif;
     margin-top: 10px;
     text-align: center;
     position: relative;
-    left: 28px;
-    
-}
-.user{
-    color:floralwhite;
-    text-decoration: underline;
-    cursor: pointer;
-    
-    
+    /* left: 28px; */
 }
 
-.category{
+.welcome button:hover {
+    background-color: #3c96d2;
+}
+
+.user {
+    color: floralwhite;
+    text-decoration: underline;
+    cursor: pointer;
+
+
+}
+
+.category {
     display: flex;
     text-align: center;
     margin: 35px;
@@ -55,35 +58,41 @@
     flex-direction: column;
     float: left;
 }
-.category h1{
+
+.category h1 {
     text-align: left;
     font-family: sans-serif;
     font-size: 18px;
 }
-input[type="submit"]{
+
+input[type="submit"] {
     width: 100%;
     height: 50px;
-    background:darkkhaki;
+    background: darkkhaki;
     font-size: 18px;
     color: black;
     cursor: pointer;
     outline: none;
     border: none;
     text-align: left;
-  }
-input[type="submit"]:hover{
-    color:white;
+}
+
+input[type="submit"]:hover {
+    color: white;
     transition: .1s;
     font-size: 20px;
 }
-.income h1{
+
+.income h1 {
     color: blueviolet;
 }
-:host /deep/ p{
+
+:host /deep/ p {
     font-style: italic;
 }
-a.button{
-    background-color:darkkhaki;
+
+.button {
+    background-color: var(--star-gold-color);
     font-size: 20px;
     text-align: left;
     text-decoration: none;
@@ -91,15 +100,22 @@ a.button{
     width: 120px;
     padding-left: 0px;
     padding-bottom: 30px;
+    position: relative;
+    display: block;
+    right: 0;
+    transition: right linear .1s;
 }
 
-a.button:hover{
-    color: white;
+.button:hover {
+    color: var(--white-color);
+    right: -3px;
     cursor: pointer;
-} 
-.button-icon{
+}
+
+.button-icon {
     padding-right: 6px;
-} 
-.color{
-    color: white!important;
+}
+
+.color {
+    color: white !important;
 }

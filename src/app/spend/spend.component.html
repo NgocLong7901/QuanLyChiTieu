@@ -1,1 +1,46 @@
-<p>spend works!</p>
+<div id="body">
+    <div class="taskbar-block">
+        <app-taskbar></app-taskbar>
+    </div>
+    <div class="spend-block">
+        <div class="spend">
+            <div class="spend-text">
+                <p>Chi tiêu</p>
+            </div>
+            <form class="spend-form" [formGroup]="newForm">
+                <div class="txt-field">
+                    <input type="text" formControlName="detail" placeholder="Tên giao dịch">
+                    <span></span>
+                </div>
+                <div class="txt-field">
+                    <input type="date" formControlName="date" placeholder="Ngày">
+                    <span></span>
+                </div>
+                <div class="txt-field">
+                    <select formControlName="id_category" placeholder="Danh mục">
+                        <option value="" selected disabled>Danh mục</option>
+                        <option value=1>Xăng dầu</option>
+                        <option value=2>Giải trí</option>
+                        <option value=3>Điện nước</option>
+                        <option value=4>Du lịch</option>
+                        <option value=5>Sức khỏe</option>
+                        <option value=6>Giáo dục</option>
+                        <option value=7>Shopping</option>
+                    </select>
+                    <span></span>
+                </div>
+                <div class="txt-field">
+                    <!-- <input class="money" type="text" formControlName="price" placeholder="Giá tiền"
+                        [appFormatFields]="CURRENCY" (change)="onChangeReactiveForm('price')"> -->
+                        <input class="money" type="text" formControlName="price" placeholder="Giá tiền">
+                    <span></span>
+                </div>
+                <div class="txt-field">
+                    <textarea formControlName="note" placeholder="Ghi chú"></textarea>
+                </div>
+                <div>{{message}}</div>
+                <button type="submit">Xác nhận</button><button [routerLink]="['/index']">Hủy</button>
+            </form>
+        </div>
+    </div>
+</div>

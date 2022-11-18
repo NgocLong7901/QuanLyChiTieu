@@ -4,27 +4,21 @@
     border-radius: 5px;
     overflow: hidden;
     margin: 80px auto;
-    background-color: #fff;
+    background-color: #FBF8F6;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.register-form {
+    padding: 0 32px;
 }
 
 .text {
     text-align: center;
     font-size: 2.2rem;
     font-weight: 400;
-    color: var(--text-color);
+    color: var(--primary-color);
     margin-top: 30px;
-}
-
-
-.register-form {
-    /* padding: 30px;
-    border-radius: 50px;
-
-    margin-left: 30%;
-    margin-right: 30%; */
-    padding: 0 32px;
-
+    user-select: none;
 }
 
 .block-center form {
@@ -33,17 +27,17 @@
 }
 
 .register-form .txt-field {
-    border-bottom: 2px solid #adadad;
     margin: 30px 0;
 }
 
 .txt-field input {
     width: 100%;
-    padding: 0 15px;
-    height: 30px;
-    font-size: 20px;
-    border: none;
-    background: none;
+    height: 40px;
+    margin-top: 16px 0;
+    padding: 0 12px;
+    font-size: 1.4rem;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
     outline: none;
 }
 

@@ -1,0 +1,105 @@
+.income {
+    background-color: rgb(251, 248, 246, 0.6);
+    margin-top: -470px;
+    margin-left: 420px;
+    margin-right: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 53px 0;
+    border-radius: 10px;
+}
+
+.income-block .income-text {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+form .txt-field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.income-form {
+    width: 500px;
+}
+
+.income-form button {
+    padding: 0.6em 1.6em;
+    border: none;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    transition: all 0.2s;
+    background-color: cornflowerblue;
+    margin-left: 90px;
+}
+
+.income-form button:hover {
+    color: white;
+    background: blue;
+}
+
+.txt-field input {
+    width: 100%;
+    padding: 0 15px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt-field textarea {
+    width: 100%;
+    padding: 0 15px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt-field label {
+    top: 45%;
+    left: 5px;
+    color: black;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt-field span {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: blueviolet;
+}
+
+.income-form select {
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    background: transparent;
+    position: relative;
+    display: flex;
+    width: 512px;
+    line-height: 3;
+    overflow: hidden;
+    border-radius: .25em;
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding: 0 15px;
+}
