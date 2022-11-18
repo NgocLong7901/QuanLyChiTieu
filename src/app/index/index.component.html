@@ -1,1 +1,12 @@
-
+<div id="block">
+    <app-taskbar></app-taskbar>
+</div>
+<div id="block">
+    <div class="money" *ngIf="showMe">
+        <!-- Số dư:{{money|currency:"VND"}}<br> -->
+    </div> 
+    <div class="money" *ngIf="!showMe" >
+        Số dư của bạn đã hết. Bạn cần nhập thêm tiền<br>
+        <!-- <button class="btn" [routerLink]="['/income']">OK</button> -->
+    </div>   
+</div>

@@ -1,0 +1,11 @@
+.text {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text p {
+    font-weight: 600;
+    color: red;
+    font-size: 10rem;
+}

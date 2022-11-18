@@ -34,6 +34,7 @@ const appRoutes: Routes = [
     IncomeComponent,
     SpendComponent,
     StatisticComponent,
+    IndexComponent,
     DetailComponent,
     PageNotFoundComponent
   ],
