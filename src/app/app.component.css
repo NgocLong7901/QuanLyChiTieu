@@ -24,6 +24,7 @@
     height: 150px;
     width: 85%;
     background-color: darkorange;
+    user-select: none;
 }
 
 #slogan h1 {
