@@ -75,3 +75,9 @@ input[type="submit"]:hover {
 .signup-link a:hover {
    color: #e97a64;
 }
+
+.alert {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}

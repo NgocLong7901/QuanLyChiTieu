@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
 export interface User {
@@ -56,13 +56,13 @@ export class DataService {
   updateWallet(wallet: any) {
     return this.http.put(this.rootURL + "/wallet/update/" + wallet.id_wallet, wallet);
   }
-  getDetailbyDate(username: string, date1: Date, date2: Date): Observable<Array<Detail>> {
+  getDetailbyDate(username: string, date1: any, date2: any): Observable<Array<Detail>> {
     return this.http.get<Array<Detail>>(this.rootURL + "/detail/all/get/" + username + "?startDate=" + date1 + "&endDate=" + date2);
   }
-  getDataSpendChart(username: string, date1: Date, date2: Date): Observable<Number[]> {
+  getDataSpendChart(username: string, date1: any, date2: any): Observable<Number[]> {
     return this.http.get<Number[]>(this.rootURL + "/detail/category/spend/" + username + "?startDate=" + date1 + "&endDate=" + date2);
   }
-  getDataIncomeChart(username: string, date1: Date, date2: Date): Observable<Number[]> {
+  getDataIncomeChart(username: string, date1: any, date2: any): Observable<Number[]> {
     return this.http.get<Number[]>(this.rootURL + "/detail/category/income/" + username + "?startDate=" + date1 + "&endDate=" + date2);
   }
   getDataChartBar(username: string, year: any): Observable<Number[]> {

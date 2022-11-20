@@ -16,6 +16,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { RouterModule, Routes } from '@angular/router';
 import { HttpInterceptorService } from './http-interceptor.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { NgChartsModule } from 'ng2-charts';
+import { NgxFormatFieldModule } from 'ngx-format-field';
+
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -47,14 +51,17 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } 
     ),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    NgChartsModule,
+    NgxFormatFieldModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
       multi: true
-    }
+    },
   ],
   bootstrap: [AppComponent]
 })

@@ -7,7 +7,7 @@
             <div class="spend-text">
                 <p>Chi tiêu</p>
             </div>
-            <form class="spend-form" [formGroup]="newForm">
+            <form class="spend-form" [formGroup]="newForm" (ngSubmit)="onSubmit()">
                 <div class="txt-field">
                     <input type="text" formControlName="detail" placeholder="Tên giao dịch">
                     <span></span>
@@ -30,9 +30,8 @@
                     <span></span>
                 </div>
                 <div class="txt-field">
-                    <!-- <input class="money" type="text" formControlName="price" placeholder="Giá tiền"
-                        [appFormatFields]="CURRENCY" (change)="onChangeReactiveForm('price')"> -->
-                        <input class="money" type="text" formControlName="price" placeholder="Giá tiền">
+                    <input class="money" type="text" formControlName="price" placeholder="Giá tiền"
+                        [appFormatFields]="CURRENCY" (change)="onChangeReactiveForm('price')">
                     <span></span>
                 </div>
                 <div class="txt-field">

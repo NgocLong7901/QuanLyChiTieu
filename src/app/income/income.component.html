@@ -7,7 +7,7 @@
             <div class="income-text">
                 <p>Thu nhập</p>
             </div>
-            <form class="income-form" [formGroup]="newForm">
+            <form class="income-form" [formGroup]="newForm" (ngSubmit)="onSubmit()"> 
                 <div class="txt-field">
                     <input type="text" formControlName="detail" placeholder="Tên giao dịch">
                     <span></span>
@@ -27,8 +27,7 @@
                     <span></span>
                 </div>
                 <div class="txt-field">
-                    <!-- <input type="text" formControlName="price" class="txtPrice" placeholder="Giá tiền" [appFormatFields]="CURRENCY" (change)="onChangeReactiveForm('price')"> -->
-                    <input type="text" formControlName="price" class="txtPrice" placeholder="Giá tiền">
+                    <input type="text" formControlName="price" class="txtPrice" placeholder="Giá tiền" [appFormatFields]="CURRENCY" (change)="onChangeReactiveForm('price')">
                 </div>
                 <div class="txt-field">
                     <textarea formControlName="note" placeholder="Ghi chú"></textarea>

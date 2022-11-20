@@ -47,16 +47,14 @@
                         <span *ngIf="detail.status==1">Chi</span>
                     </td>
                     <td>
-                        <!-- <a id="btn-del" class="button" (click)="delete(detail)"> -->
-                        <a id="btn-del" class="button">
+                        <a id="btn-del" class="button" (click)="delete(detail)">
                             <span>
                                 <i class="fas fa-trash-alt"></i>
                             </span>
                         </a>
                     </td>
                     <td>
-                        <!-- <a id="btn-del" class="button" (click)="clickbtnFix(detail)"> -->
-                        <a id="btn-del" class="button">
+                        <a id="btn-del" class="button" (click)="clickbtnFix(detail)">
                             <span>
                                 <i class="fas fa-wrench"></i>
                             </span>
@@ -67,8 +65,7 @@
         </table>
     </div>
     <div class="mess-fix" *ngIf="!showMe">
-        <!-- <form class="body-form" [formGroup]="newForm" (ngSubmit)="updateDetail()"> -->
-        <form class="body-form" [formGroup]="newForm">
+        <form class="body-form" [formGroup]="newForm" (ngSubmit)="updateDetail()">
             <div class="txt-field">
                 <input type="text" formControlName="detail">
                 <span></span>
@@ -101,17 +98,15 @@
                 <span></span>
             </div>
             <div class="txt-field">
-                <!-- <input type="text" formControlName="price" class="txtPrice" placeholder="Giá tiền"
-                    [appFormatFields]="CURRENCY" (change)="onChangeReactiveForm('price')"> -->
-                <input type="text" formControlName="price" class="txtPrice" placeholder="Giá tiền">
+                <input type="text" formControlName="price" class="txtPrice" placeholder="Giá tiền"
+                    [appFormatFields]="CURRENCY" (change)="onChangeReactiveForm('price')">
             </div>
             <div class="txt-field">
                 <textarea formControlName="note" placeholder="Ghi chú"></textarea>
             </div>
 
             <div>{{message}}</div>
-            <!-- <button type="submit" (click)="updateDetail()">Xác nhận</button> -->
-            <button type="submit">Xác nhận</button>
+            <button type="submit" (click)="updateDetail()">Xác nhận</button>
             <button (click)="clickbtnClose()">Hủy</button>
         </form>
     </div>

@@ -8,16 +8,14 @@
                 <p>Thống kê</p>
             </div>
             <div class="select">
-                <!-- <input class="select-radio" type="radio" id="date" name="fav_language" [value]="true"
-                    [(ngModel)]="showMe"> -->
                 <div class="date-select">
-                    <input class="select-radio" type="radio" id="date" name="fav_language" [value]="true">
+                    <input class="select-radio" type="radio" id="date" name="fav_language" [value]="true"
+                    [(ngModel)]="showMe">
                     <label for="date">Thống kê theo ngày</label><br>
                 </div>
-                <!-- <input class="select-radio" type="radio" id="year" name="fav_language" [value]="false"
-                    [(ngModel)]="showMe"> -->
                 <div class="radio-select">
-                    <input class="select-radio" type="radio" id="year" name="fav_language" [value]="false">
+                    <input class="select-radio" type="radio" id="year" name="fav_language" [value]="false"
+                    [(ngModel)]="showMe">
                     <label for="year">Thống kê theo năm</label><br>
                 </div>
             </div>
@@ -97,8 +95,7 @@
                     <select (change)="selectChangeHandler($event)">
                         <option *ngFor="let item of year1" [value]="item">{{item}}</option>
                     </select>
-                    <!-- <a class="btn-search" (click)="getChartBar()"><i class="fas fa-search"></i></a> -->
-                    <a class="btn-search"><i class="fas fa-search"></i></a>
+                    <a class="btn-search" (click)="getChartBar()"><i class="fas fa-search"></i></a>
                 </div>
                 <div class="tong">
                     <div class="thu">Tổng thu :{{sumInYear|currency:"VND":"symbol"}}</div>
