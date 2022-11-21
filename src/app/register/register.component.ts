@@ -14,21 +14,21 @@ export class RegisterComponent implements OnInit {
   registerForm: any = this.fb.group({
     username: [''],
     password: [''],
-    fullname:[''],
-    phonenumber:[''],
+    fullname: [''],
+    phonenumber: [''],
     role: ['USER']
   });
   ngOnInit(): void {
   }
   register() {
-    this.authService.register(this.registerForm.value.username,this.registerForm.value.password, this.registerForm.value.fullname,this.registerForm.value.phonenumber,this.registerForm.value.role).subscribe(response => {
-        var code = response.status;
-        if (code == 201)
-        this.message="Đăng ký thành công";
-        else {
-          this.message="Đăng ký thất bại";
-        }
+    this.authService.register(this.registerForm.value.username, this.registerForm.value.password, this.registerForm.value.fullname, this.registerForm.value.phonenumber, this.registerForm.value.role).subscribe(response => {
+      var code = response.status;
+      if (code == 201)
+        this.message = "Đăng ký thành công";
+      else {
+        this.message = "Đăng ký thất bại";
       }
-      );
+    }
+    );
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { DataService } from '../data.service';
+
 @Component({
   selector: 'app-taskbar',
   templateUrl: './taskbar.component.html',
@@ -10,7 +10,7 @@ import { DataService } from '../data.service';
 export class TaskbarComponent implements OnInit {
   id: any;
   user=this.authService.getLoggedInUserName();
-  constructor(private router: Router, private authService: AuthService, private dataService: DataService) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +20,6 @@ export class TaskbarComponent implements OnInit {
   }
   tabChange(ids: any) {
     this.id = ids;
-    this.router.navigate(['/' + this.id])
+    this.router.navigate(['/' + this.id]);
   }
 }

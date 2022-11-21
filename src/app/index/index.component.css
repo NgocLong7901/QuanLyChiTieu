@@ -1,15 +1,16 @@
 .money {
     position: absolute;
-    width: 300px;
-    top: 30px;
+    width: 1200px;
+    top: -350px;
     left: 220px;
-    font-size: 30px;
+    font-size: 3rem;
     font-family: sans-serif;
-    display: inline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#block {
-    display: inline-block;
+.block-index {
     position: relative;
 }
 
@@ -25,8 +26,12 @@
     cursor: pointer;
     outline: none;
     font-family: sans-serif;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     text-align: center;
     position: relative;
-    left: 28px;
+    margin-left: 30px;
+}
+
+.btn:hover {
+    background-color: #3c96d2;
 }

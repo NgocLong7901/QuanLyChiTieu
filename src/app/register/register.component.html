@@ -4,22 +4,22 @@
             <p>ĐĂNG KÝ</p>
         </div>
         <div class="txt-field">
-            <input type="text" formControlName="fullname" placeholder="Họ và tên">
+            <input type="text" formControlName="fullname" placeholder="Họ và tên" required>
             <span></span>
         </div>
         <div class="txt-field">
-            <input type="text" formControlName="phonenumber" placeholder="Số điện thoại">
+            <input type="text" formControlName="phonenumber" placeholder="Số điện thoại" required>
             <span></span>
         </div>
         <div class="txt-field">
-            <input type="text" formControlName="username" placeholder="Tên đăng nhập">
+            <input type="text" formControlName="username" placeholder="Tên đăng nhập" required>
             <span></span>
         </div>
         <div class="txt-field">
-            <input type="password" formControlName="password" placeholder="Mật khẩu">
+            <input type="password" formControlName="password" placeholder="Mật khẩu" required>
             <span></span>
         </div>
-        <div>{{message}}</div>
+        <div class="message-text">{{message}}</div>
         <input type="submit" value="Đăng ký">
         <input [routerLink]="['/login']" type="submit" value="Trở về">
     </form>

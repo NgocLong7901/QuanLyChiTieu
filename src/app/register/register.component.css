@@ -73,6 +73,15 @@
     width: 100%;
 } */
 
+.message-text {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    background-color: #FFF3CD;
+    margin-bottom: 32px;
+    line-height: 3;
+}
+
 input[type="submit"] {
     width: 100%;
     height: 50px;
