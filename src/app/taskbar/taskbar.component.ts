@@ -18,8 +18,8 @@ export class TaskbarComponent implements OnInit {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
-  tabChange(ids: any) {
-    this.id = ids;
+  tabChange(key: any) {
+    this.id = key;
     this.router.navigate(['/' + this.id]);
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe((response) => {
+    this.authService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe((response: any) => {
       var code = response.status;
       console.log("status code:" + code);
       if (code == 200) {
@@ -32,8 +33,8 @@ export class LoginComponent implements OnInit {
         this.authService.username = this.loginForm.value.username;
         this.authService.password = this.loginForm.value.password;
         this.authService.registerSuccessfulLogin(this.loginForm.value.username);
-        localStorage.setItem("userId", "response.body['id_user']");
-        localStorage.setItem("user", JSON.stringify(response.body)); // lấy toàn bộ thông tin user         
+        localStorage.setItem('userId', response.body['id_user']);
+        localStorage.setItem('user', JSON.stringify(response.body)); // lấy toàn bộ thông tin user         
         this.router.navigate(['/index']);
       }
     }, () => {
