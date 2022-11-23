@@ -202,16 +202,15 @@ h2 {
 }
 
 .mess-fix {
-
     position: fixed;
     background-color: rgba(191, 204, 6, 0.726);
     height: 100%;
     width: 500px;
     margin-left: 40%;
     margin-top: -450px;
-    border-radius: 20px;
     backdrop-filter: blur(2px);
     z-index: 3;
+    overflow: hidden;
 }
 
 .block {
@@ -323,4 +322,13 @@ form .txt-field {
     font-family: sans-serif;
     font-size: 16px;
     padding: 0 15px;
+}
+
+.message-text {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    background-color: #FFF3CD;
+    margin-bottom: 32px;
+    line-height: 3;
 }

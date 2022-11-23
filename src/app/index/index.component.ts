@@ -9,13 +9,6 @@ import { DataService, Wallet } from '../data.service';
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-  message: string | undefined;
-  wallet: any;
-  money: any;
-  sumIn: any;
-  sumSpend: any;
-  username = this.authService.getLoggedInUserName();
-  showMe: boolean | undefined;
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private dataService: DataService) { }
   form = this.fb.group({
     id_wallet: [''],
@@ -24,6 +17,9 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     this.getWallet();
   }
+  wallet: any;
+  money: any;
+  showMe: boolean | undefined;
 
   getWallet() {
     const userId = localStorage.getItem('userId');
