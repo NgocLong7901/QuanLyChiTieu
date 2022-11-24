@@ -1,4 +1,4 @@
-<div id="body">
+<div class="body">
     <div class="taskbar-block">
         <app-taskbar></app-taskbar>
     </div>
@@ -25,7 +25,7 @@
                         <option value=4>Du lịch</option>
                         <option value=5>Sức khỏe</option>
                         <option value=6>Giáo dục</option>
-                        <option value=7>Shopping</option>
+                        <option value=7>Mua sắm</option>
                     </select>
                     <span></span>
                 </div>
@@ -37,7 +37,7 @@
                 <div class="txt-field">
                     <textarea formControlName="note" placeholder="Ghi chú"></textarea>
                 </div>
-                <div>{{message}}</div>
+                <div class="message-text">{{message}}</div>
                 <button type="submit">Xác nhận</button><button [routerLink]="['/index']">Hủy</button>
             </form>
         </div>

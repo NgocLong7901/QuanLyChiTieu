@@ -11,15 +11,13 @@ import { DataService } from '../data.service';
 export class SpendComponent implements OnInit {
   public CURRENCY: any;
   message: string | undefined;
-  currency: any;
-  user = this.authService.getLoggedInUserName();
   newForm: any = this.fb.group({
     detail: [''],
     date: [''],
     id_category: [''],
     price: [''],
     note: [''],
-    username: [this.user]
+    username: [this.authService.getLoggedInUserName()]
   });
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private dataService: DataService) { }
 
@@ -27,9 +25,9 @@ export class SpendComponent implements OnInit {
     this.CURRENCY = 'CURRENCY';
   }
   onSubmit() {
-    const userId =localStorage.getItem('userId');
-    console.log(userId)
-    let detail = { id: "", detail: "", date: "", id_category: "", price: "", note: "", status: 1, username:"",id_user:userId };
+    const userId = localStorage.getItem('userId');
+    console.log(userId);
+    let detail = { id: "", detail: "", date: "", id_category: "", price: "", note: "", status: 1, username: "", id_user: userId };
     detail.detail = this.newForm.value.detail;
     detail.date = this.newForm.value.date;
     detail.id_category = this.newForm.value.id_category;

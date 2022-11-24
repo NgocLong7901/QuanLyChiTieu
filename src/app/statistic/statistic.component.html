@@ -10,12 +10,12 @@
             <div class="select">
                 <div class="date-select">
                     <input class="select-radio" type="radio" id="date" name="fav_language" [value]="true"
-                    [(ngModel)]="showMe">
+                        [(ngModel)]="showMe">
                     <label for="date">Thống kê theo ngày</label><br>
                 </div>
                 <div class="radio-select">
                     <input class="select-radio" type="radio" id="year" name="fav_language" [value]="false"
-                    [(ngModel)]="showMe">
+                        [(ngModel)]="showMe">
                     <label for="year">Thống kê theo năm</label><br>
                 </div>
             </div>
@@ -56,7 +56,6 @@
                                 <span *ngIf="detail.id_category==5">Sức khỏe</span>
                                 <span *ngIf="detail.id_category==6">Giáo dục</span>
                                 <span *ngIf="detail.id_category==7">Shopping</span>
-
                                 <span *ngIf="detail.id_category==10">Lương</span>
                                 <span *ngIf="detail.id_category==11">Thưởng</span>
                                 <span *ngIf="detail.id_category==12">Được tặng</span>
@@ -126,9 +125,6 @@
                                 <span *ngIf="detail.id_category==5">Sức khỏe</span>
                                 <span *ngIf="detail.id_category==6">Giáo dục</span>
                                 <span *ngIf="detail.id_category==7">Shopping</span>
-
-
-
                                 <span *ngIf="detail.id_category==10">Lương</span>
                                 <span *ngIf="detail.id_category==11">Thưởng</span>
                                 <span *ngIf="detail.id_category==12">Được tặng</span>
@@ -144,7 +140,6 @@
                         </tr>
                     </tbody>
                 </table>
-
                 <div>
                     <!-- chartBar -->
                     <div>

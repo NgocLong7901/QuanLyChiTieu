@@ -30,10 +30,7 @@
                         <span *ngIf="detail.id_category==4">Du lịch</span>
                         <span *ngIf="detail.id_category==5">Sức khỏe</span>
                         <span *ngIf="detail.id_category==6">Giáo dục</span>
-                        <span *ngIf="detail.id_category==7">Shopping</span>
-
-
-
+                        <span *ngIf="detail.id_category==7">Mua sắm</span>
                         <span *ngIf="detail.id_category==10">Lương</span>
                         <span *ngIf="detail.id_category==11">Thưởng</span>
                         <span *ngIf="detail.id_category==12">Được tặng</span>
@@ -47,14 +44,14 @@
                         <span *ngIf="detail.status==1">Chi</span>
                     </td>
                     <td>
-                        <a id="btn-del" class="button" (click)="delete(detail)">
+                        <a class="btn-del" class="button" (click)="delete(detail)">
                             <span>
                                 <i class="fas fa-trash-alt"></i>
                             </span>
                         </a>
                     </td>
                     <td>
-                        <a id="btn-del" class="button" (click)="clickbtnFix(detail)">
+                        <a class="btn-fix" class="button" (click)="clickbtnFix(detail)">
                             <span>
                                 <i class="fas fa-wrench"></i>
                             </span>
@@ -93,7 +90,7 @@
                     <option value=4>Du lịch</option>
                     <option value=5>Sức khỏe</option>
                     <option value=6>Giáo dục</option>
-                    <option value=7>Shopping</option>
+                    <option value=7>Mua sắm</option>
                 </select>
                 <span></span>
             </div>

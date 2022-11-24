@@ -12,8 +12,6 @@ export class DetailComponent implements OnInit {
   details: any;
   public CURRENCY: any;
   showMe: boolean = true;
-  sumIn: any;
-  sumSpend: any;
   selectedDetail: any;
   message: string | undefined;
   showCategory: boolean | undefined;
@@ -33,7 +31,7 @@ export class DetailComponent implements OnInit {
   }
   displayListDetail() {
     this.dataService.getListDetail(this.username).subscribe((data: Array<Detail>) => {
-      this.details = data
+      this.details = data;
     })
   }
   delete(detail: any) {
@@ -76,6 +74,7 @@ export class DetailComponent implements OnInit {
           this.message = "Bạn cập nhật thành công";
       }
     );
+    this.displayListDetail();
   }
   clickbtnClose() {
     this.showMe = !this.showMe;

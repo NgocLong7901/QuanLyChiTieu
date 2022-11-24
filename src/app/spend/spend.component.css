@@ -103,3 +103,12 @@ form .txt-field {
     font-size: 20px;
     padding: 0 15px;
 }
+
+.message-text {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    background-color: #FFF3CD;
+    margin-bottom: 32px;
+    line-height: 3;
+}
