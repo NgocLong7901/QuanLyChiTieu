@@ -108,7 +108,7 @@ export class StatisticComponent implements OnInit {
         this.chart = new Chart('canvas', {
           type: 'pie',
           data: {
-            labels: [['Xăng dầu'], ['Giải trí'], ['Điện nước'], ['Du lịch'], ['Sức khỏe'], ['Giáo dục'], 'Shopping'],
+            labels: [['Xăng dầu'], ['Giải trí'], ['Điện nước'], ['Du lịch'], ['Sức khỏe'], ['Giáo dục'], 'Mua sắm'],
             datasets: [{
               data: dataSpendPie,
               backgroundColor: [
@@ -133,7 +133,7 @@ export class StatisticComponent implements OnInit {
         this.chart = new Chart('canvas', {
           type: 'pie',
           data: {
-            labels: [['Xăng dầu'], ['Giải trí'], ['Điện nước'], ['Du lịch'], ['Sức khỏe'], ['Giáo dục'], 'Shopping'],
+            labels: [['Xăng dầu'], ['Giải trí'], ['Điện nước'], ['Du lịch'], ['Sức khỏe'], ['Giáo dục'], 'Mua sắm'],
             datasets: [{
               data: dataSpendPie,
               backgroundColor: [
