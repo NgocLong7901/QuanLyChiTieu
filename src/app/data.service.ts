@@ -45,7 +45,7 @@ export class DataService {
     return this.http.put(this.rootURL + "/detail/update/" + detail.id, detail);
   }
   getUserName(username: string): Observable<User> {
-    return this.http.get<User>(this.rootURL + "/user/get?username=" + username)
+    return this.http.get<User>(this.rootURL + "/user/get?username=" + username);
   }
   deleteDetail(id: any) {
     return this.http.delete(this.rootURL + "/detail/delete/" + id);

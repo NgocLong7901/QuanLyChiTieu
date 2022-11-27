@@ -26,7 +26,6 @@ export class StatisticComponent implements OnInit {
   dataIncomechart: any;
   chart: any;
   chartIn: any;
-  // dataInchartBar = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
   dataInchartBar: any;
   chartBar: any;
   detailsInYear: any;
@@ -36,9 +35,9 @@ export class StatisticComponent implements OnInit {
     this.year1 = this.selectyear();
   }
   selectyear() {
-    let syear = 2018;
+    let syear = 2019;
     var year = new Array();
-    for (var i = 0; i < 16; i++) {
+    for (var i = 0; i < 15; i++) {
       year[i] = syear;
       syear++;
     }
@@ -58,12 +57,11 @@ export class StatisticComponent implements OnInit {
     this.dataService.getDetailbyDate(username, sdate, edate).subscribe((data: Array<Detail>) => {
       this.details = data;
       var sum = 0;
-      var sumSpend = 0
+      var sumSpend = 0;
       for (var i = 0; i < data.length; i++) {
         if (data[i].status == 0) {
           sum += data[i].price;
         }
-
         else {
           sumSpend += data[i].price;
         }
@@ -71,12 +69,10 @@ export class StatisticComponent implements OnInit {
       this.sumIn = sum;
       this.sumSpend = sumSpend;
     });
-    //data chart spend
 
-    //draw chart pie
+    //data chart spend
     this.dataService.getDataSpendChart(username, sdate, edate).subscribe((data: any) => {
       this.dataSpendchart = data;
-
       var dataSpendPie = new Array(0, 0, 0, 0, 0, 0, 0);
       for (var i = 0; i < data.length; i++) {
         switch (data[i][1]) {
@@ -102,7 +98,7 @@ export class StatisticComponent implements OnInit {
             dataSpendPie[6] = data[i][0];
             break;
         }
-        console.log(dataSpendPie);
+        console.log("dataSpendPie: " + dataSpendPie);
       }
       if (this.chart == null) {
         this.chart = new Chart('canvas', {
