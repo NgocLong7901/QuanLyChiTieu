@@ -1,6 +1,6 @@
 .spend {
     background-color: rgb(251, 248, 246, 0.6);
-    margin-top: -470px;
+    margin-top: -469px;
     margin-left: 420px;
     margin-right: 250px;
     height: auto;
@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 53px 0;
+    padding: 54px 0;
     border-radius: 10px;
 }
 

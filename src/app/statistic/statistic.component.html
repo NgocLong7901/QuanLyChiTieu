@@ -26,7 +26,6 @@
                     -
                     <input formControlName="endDate" class="input-date" type="date" value="Đến ngày">
                     <a class="btn-search" (click)="getDetailbyDate()"><i class="fas fa-search"></i></a>
-
                 </div>
                 <div class="tong">
                     <div class="thu">Tổng thu :{{sumIn|currency:"VND":"symbol"}}</div>
@@ -55,7 +54,7 @@
                                 <span *ngIf="detail.id_category==4">Du lịch</span>
                                 <span *ngIf="detail.id_category==5">Sức khỏe</span>
                                 <span *ngIf="detail.id_category==6">Giáo dục</span>
-                                <span *ngIf="detail.id_category==7">Shopping</span>
+                                <span *ngIf="detail.id_category==7">Mua sắm</span>
                                 <span *ngIf="detail.id_category==10">Lương</span>
                                 <span *ngIf="detail.id_category==11">Thưởng</span>
                                 <span *ngIf="detail.id_category==12">Được tặng</span>
@@ -90,7 +89,6 @@
             <!-- year -->
             <div class="bar" *ngIf="!showMe">
                 <div class="year" [formGroup]="formDate">
-
                     <select (change)="selectChangeHandler($event)">
                         <option *ngFor="let item of year1" [value]="item">{{item}}</option>
                     </select>
@@ -124,7 +122,7 @@
                                 <span *ngIf="detail.id_category==4">Du lịch</span>
                                 <span *ngIf="detail.id_category==5">Sức khỏe</span>
                                 <span *ngIf="detail.id_category==6">Giáo dục</span>
-                                <span *ngIf="detail.id_category==7">Shopping</span>
+                                <span *ngIf="detail.id_category==7">Mua sắm</span>
                                 <span *ngIf="detail.id_category==10">Lương</span>
                                 <span *ngIf="detail.id_category==11">Thưởng</span>
                                 <span *ngIf="detail.id_category==12">Được tặng</span>

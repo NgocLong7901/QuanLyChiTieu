@@ -179,7 +179,7 @@ export class StatisticComponent implements OnInit {
         this.chartIn = new Chart('canvasIn', {
           type: 'pie',
           data: {
-            labels: [['Lương'], ['Thưởng'], ['Được tặng'], 'Bản đồ'],
+            labels: [['Lương'], ['Thưởng'], ['Được tặng'], 'Bán đồ'],
             datasets: [{
               data: dataInPie,
               backgroundColor: [
@@ -201,7 +201,7 @@ export class StatisticComponent implements OnInit {
         this.chartIn = new Chart('canvasIn', {
           type: 'pie',
           data: {
-            labels: [['Lương'], ['Thưởng'], ['Được tặng'], 'Bản đồ'],
+            labels: [['Lương'], ['Thưởng'], ['Được tặng'], 'Bán đồ'],
             datasets: [{
               data: dataInPie,
               backgroundColor: [
