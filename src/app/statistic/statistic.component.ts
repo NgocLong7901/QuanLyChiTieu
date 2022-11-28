@@ -114,8 +114,7 @@ export class StatisticComponent implements OnInit {
                 '#e40000',
                 '#c10000',
                 '#a70202',
-                '#910101',
-                '#964564'
+                '#910101'
               ],
             }]
           },
@@ -182,8 +181,7 @@ export class StatisticComponent implements OnInit {
                 '#0261ff',
                 '#0050d4',
                 '#013892',
-                '#002665',
-                '#5c99ff'
+                '#002665'
               ],
             }]
           },
@@ -204,8 +202,7 @@ export class StatisticComponent implements OnInit {
                 '#0261ff',
                 '#0050d4',
                 '#013892',
-                '#002665',
-                '#5c99ff'
+                '#002665'
               ],
             }]
           },
@@ -224,7 +221,7 @@ export class StatisticComponent implements OnInit {
     this.dataService.getDetailbyYear(username, this.selected).subscribe((data: Array<Detail>) => {
       this.detailsInYear = data;
       var sum = 0;
-      var sumSpend = 0
+      var sumSpend = 0;
       for (var i = 0; i < data.length; i++) {
         if (data[i].status == 0) {
           sum += data[i].price;
@@ -334,16 +331,13 @@ export class StatisticComponent implements OnInit {
             datasets: [
               { data: dataSpendBar, label: 'Chi tiêu' },
               { data: dataInBar, label: 'Thu Nhập' }
-
             ]
           },
           options: {
             responsive: true,
             scales: {
               x: {},
-              y: {
-                min: 10
-              }
+              y: {}
             },
             plugins: {
               legend: {
@@ -367,9 +361,7 @@ export class StatisticComponent implements OnInit {
             responsive: true,
             scales: {
               x: {},
-              y: {
-                min: 10
-              }
+              y: {}
             },
             plugins: {
               legend: {

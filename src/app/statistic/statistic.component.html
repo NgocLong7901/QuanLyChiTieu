@@ -9,13 +9,11 @@
             </div>
             <div class="select">
                 <div class="date-select">
-                    <input class="select-radio" type="radio" id="date" name="fav_language" [value]="true"
-                        [(ngModel)]="showMe">
+                    <input class="select-radio" type="radio" id="date" name="fav_language" [value]="true" [(ngModel)]="showMe">
                     <label for="date">Thống kê theo ngày</label><br>
                 </div>
                 <div class="radio-select">
-                    <input class="select-radio" type="radio" id="year" name="fav_language" [value]="false"
-                        [(ngModel)]="showMe">
+                    <input class="select-radio" type="radio" id="year" name="fav_language" [value]="false" [(ngModel)]="showMe">
                     <label for="year">Thống kê theo năm</label><br>
                 </div>
             </div>
@@ -28,8 +26,8 @@
                     <a class="btn-search" (click)="getDetailbyDate()"><i class="fas fa-search"></i></a>
                 </div>
                 <div class="tong">
-                    <div class="thu">Tổng thu :{{sumIn|currency:"VND":"symbol"}}</div>
-                    <div class="chi">Tổng chi :{{sumSpend|currency:"VND":"symbol"}}</div>
+                    <div class="thu">Tổng thu: {{sumIn|currency:"VND":"symbol"}}</div>
+                    <div class="chi">Tổng chi: {{sumSpend|currency:"VND":"symbol"}}</div>
                 </div>
 
                 <table class="table">
@@ -49,6 +47,7 @@
                             <td>{{detail.id_detail}}</td>
                             <td>{{detail.detail}}</td>
                             <td>
+                                <span *ngIf="detail.id_category==1">Xăng dầu</span>
                                 <span *ngIf="detail.id_category==2">Giải trí</span>
                                 <span *ngIf="detail.id_category==3">Điện nước</span>
                                 <span *ngIf="detail.id_category==4">Du lịch</span>
@@ -72,7 +71,7 @@
                 </table>
                 <div>
                     <!-- chart Pie -->
-                    <div style="display: flexbox;">
+                    <div style="display: flex;">
                         <div class="chart">
                             <label *ngIf="chart" style="font-weight: bold;text-align: center;">CHI TIÊU</label>
                             <canvas id="canvas">{{chart}}</canvas>
@@ -93,8 +92,8 @@
                     <a class="btn-search" (click)="getChartBar()"><i class="fas fa-search"></i></a>
                 </div>
                 <div class="tong">
-                    <div class="thu">Tổng thu :{{sumInYear|currency:"VND":"symbol"}}</div>
-                    <div class="chi">Tổng chi :{{sumSpendYear|currency:"VND":"symbol"}}</div>
+                    <div class="thu">Tổng thu: {{sumInYear|currency:"VND":"symbol"}}</div>
+                    <div class="chi">Tổng chi: {{sumSpendYear|currency:"VND":"symbol"}}</div>
                 </div>
 
                 <table class="table">
