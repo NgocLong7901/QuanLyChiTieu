@@ -104,7 +104,7 @@ export class StatisticComponent implements OnInit {
         this.chart = new Chart('canvas', {
           type: 'pie',
           data: {
-            labels: [['Xăng dầu'], ['Giải trí'], ['Điện nước'], ['Du lịch'], ['Sức khỏe'], ['Giáo dục'], 'Mua sắm'],
+            labels: ['Xăng dầu', 'Giải trí', 'Điện nước', 'Du lịch', 'Sức khỏe', 'Giáo dục', 'Mua sắm'],
             datasets: [{
               data: dataSpendPie,
               backgroundColor: [
@@ -128,7 +128,7 @@ export class StatisticComponent implements OnInit {
         this.chart = new Chart('canvas', {
           type: 'pie',
           data: {
-            labels: [['Xăng dầu'], ['Giải trí'], ['Điện nước'], ['Du lịch'], ['Sức khỏe'], ['Giáo dục'], 'Mua sắm'],
+            labels: ['Xăng dầu', 'Giải trí', 'Điện nước', 'Du lịch', 'Sức khỏe', 'Giáo dục', 'Mua sắm'],
             datasets: [{
               data: dataSpendPie,
               backgroundColor: [
@@ -155,7 +155,6 @@ export class StatisticComponent implements OnInit {
       var dataInPie = new Array(0, 0, 0, 0);
       for (var i = 0; i < data.length; i++) {
         switch (data[i][1]) {
-
           case 10:
             dataInPie[0] = data[i][0];
             break;
@@ -174,7 +173,7 @@ export class StatisticComponent implements OnInit {
         this.chartIn = new Chart('canvasIn', {
           type: 'pie',
           data: {
-            labels: [['Lương'], ['Thưởng'], ['Được tặng'], 'Bán đồ'],
+            labels: ['Lương', 'Thưởng', 'Được tặng', 'Bán đồ'],
             datasets: [{
               data: dataInPie,
               backgroundColor: [
@@ -195,7 +194,7 @@ export class StatisticComponent implements OnInit {
         this.chartIn = new Chart('canvasIn', {
           type: 'pie',
           data: {
-            labels: [['Lương'], ['Thưởng'], ['Được tặng'], 'Bán đồ'],
+            labels: ['Lương', 'Thưởng', 'Được tặng', 'Bán đồ'],
             datasets: [{
               data: dataInPie,
               backgroundColor: [
@@ -337,7 +336,9 @@ export class StatisticComponent implements OnInit {
             responsive: true,
             scales: {
               x: {},
-              y: {}
+              y: {
+                beginAtZero: true
+              }
             },
             plugins: {
               legend: {
@@ -361,7 +362,9 @@ export class StatisticComponent implements OnInit {
             responsive: true,
             scales: {
               x: {},
-              y: {}
+              y: {
+                beginAtZero: true
+              }
             },
             plugins: {
               legend: {
