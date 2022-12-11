@@ -5,7 +5,7 @@ import { AuthService } from './auth.service';
 export interface User {
   username: String;
   password: String;
-  id: number;
+  id_user: number;
   fullname: String;
   SDT: number;
 }
@@ -21,7 +21,7 @@ export interface Detail {
 }
 
 export interface Wallet {
-  id: number;
+  id_wallet: any;
   money: number;
 }
 @Injectable({
@@ -49,6 +49,11 @@ export class DataService {
   }
   deleteDetail(id: any) {
     return this.http.delete(this.rootURL + "/detail/delete/" + id);
+  }
+  addWallet(wallet: Wallet) {
+    return this.http.post<Response>(this.rootURL + "/wallet/add", wallet, {
+      observe: 'response'
+    });
   }
   getWallet(id_wallet: any): Observable<Wallet> {
     return this.http.get<Wallet>(this.rootURL + "/wallet/get/" + id_wallet);

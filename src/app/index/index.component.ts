@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../auth.service';
-import { DataService, Wallet } from '../data.service';
+import { DataService, Detail, Wallet } from '../data.service';
+import { ThemeService } from 'ng2-charts';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -10,23 +11,49 @@ import { DataService, Wallet } from '../data.service';
 })
 export class IndexComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private dataService: DataService) { }
-  form = this.fb.group({
-    id_wallet: [''],
-    money: ['']
-  })
   ngOnInit(): void {
     this.getWallet();
   }
+  sumIncome: number | undefined;
+  sumSpend: number | undefined;
+  details: any;
   wallet: any;
-  money: any;
+  surplus: number | undefined;
+  moneyWallet: any;
   showMe: boolean | undefined;
-
+  addWalletByUser() {
+    var sumIn = 0;
+    var sumSp = 0;
+    let username = this.authService.getLoggedInUserName();
+    const userId = localStorage.getItem('userId');
+    this.dataService.getListDetail(username).subscribe((data: Array<Detail>) => {
+      this.details = data;
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].status == 0) {
+          sumIn += data[i].price;
+        }
+        else {
+          sumSp += data[i].price;
+        }
+      }
+      this.sumIncome = sumIn;
+      this.sumSpend = sumSp;
+    })
+    this.surplus = sumIn - sumSp;
+    let newWallet = { id_wallet: userId, money: this.surplus };
+    this.dataService.addWallet(newWallet).subscribe(response => {
+      let code = 0;
+      code = response.status;
+      console.log("status code: " + code);
+    })
+  }
   getWallet() {
+    this.addWalletByUser();
     const userId = localStorage.getItem('userId');
     this.dataService.getWallet(userId).subscribe((data: Wallet) => {
       this.wallet = data;
-      this.money = this.wallet.money;
-      if (this.money == 0 || this.money < 0) {
+      this.moneyWallet = this.wallet.money;
+      if (this.moneyWallet == 0 || this.moneyWallet < 0) {
         this.showMe = false;
       } else {
         this.showMe = true;

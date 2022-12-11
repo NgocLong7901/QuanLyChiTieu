@@ -28,7 +28,7 @@ export class AuthService {
   registerSuccessfulLogin(username: any) {
     sessionStorage.setItem(this.USER_NAME_SESSION, username);
   }
-  SetID(id: any) {
+  setID(id: any) {
     localStorage.setItem(this.ID_USER, id);
   }
   logout() {

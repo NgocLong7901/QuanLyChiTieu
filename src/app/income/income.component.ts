@@ -43,8 +43,7 @@ export class IncomeComponent implements OnInit {
       if (code == 200) {
         this.message = "Bạn thêm thành công";
       }
-    }
-    );
+    });
   }
   onChangeReactiveForm(key: string) {
     // cập nhật 1 phần của form -> patchValue

@@ -3,7 +3,7 @@
 </div>
 <div class="block-index">
     <div class="money" *ngIf="showMe">
-        <p>Số dư: {{money|currency:"VND"}}</p>
+        <p>Số dư: {{moneyWallet|currency:"VND":"symbol"}}</p>
     </div>
     <div class="money" *ngIf="!showMe">
         <p>Số dư của bạn đã hết. Bạn cần nhập thêm tiền</p>
