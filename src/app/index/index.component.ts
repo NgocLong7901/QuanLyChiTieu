@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { DataService, Detail, Wallet } from '../data.service';
-import { ThemeService } from 'ng2-charts';
+import { NumberSymbol } from '@angular/common';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
@@ -12,6 +12,7 @@ import { ThemeService } from 'ng2-charts';
 export class IndexComponent implements OnInit {
   constructor(private fb: FormBuilder, private router: Router, private authService: AuthService, private dataService: DataService) { }
   ngOnInit(): void {
+    this.addWalletByUser();
     this.getWallet();
   }
   sumIncome: number | undefined;
@@ -27,6 +28,7 @@ export class IndexComponent implements OnInit {
     let username = this.authService.getLoggedInUserName();
     const userId = localStorage.getItem('userId');
     this.dataService.getListDetail(username).subscribe((data: Array<Detail>) => {
+      var newWallet = { id_wallet: userId, money: 0 };
       this.details = data;
       for (var i = 0; i < data.length; i++) {
         if (data[i].status == 0) {
@@ -38,17 +40,15 @@ export class IndexComponent implements OnInit {
       }
       this.sumIncome = sumIn;
       this.sumSpend = sumSp;
-    })
-    this.surplus = sumIn - sumSp;
-    let newWallet = { id_wallet: userId, money: this.surplus };
-    this.dataService.addWallet(newWallet).subscribe(response => {
-      let code = 0;
-      code = response.status;
-      console.log("status code: " + code);
+      newWallet.money = sumIn - sumSp;
+      this.dataService.addWallet(newWallet).subscribe(response => {
+        let code = 0;
+        code = response.status;
+        console.log("status code: " + code);
+      })
     })
   }
   getWallet() {
-    this.addWalletByUser();
     const userId = localStorage.getItem('userId');
     this.dataService.getWallet(userId).subscribe((data: Wallet) => {
       this.wallet = data;

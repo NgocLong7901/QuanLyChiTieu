@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from './auth.service';
+import { NumberSymbol } from '@angular/common';
 export interface User {
   username: String;
   password: String;
@@ -50,7 +51,7 @@ export class DataService {
   deleteDetail(id: any) {
     return this.http.delete(this.rootURL + "/detail/delete/" + id);
   }
-  addWallet(wallet: Wallet) {
+  addWallet(wallet: any) {
     return this.http.post<Response>(this.rootURL + "/wallet/add", wallet, {
       observe: 'response'
     });
