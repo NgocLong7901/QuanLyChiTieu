@@ -4,7 +4,6 @@
     width: 1200px;
     top: -350px;
     left: 220px;
-    font-size: 3rem;
     font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: center;
@@ -13,6 +12,8 @@
 
 .money p {
     user-select: none;
+    color: #008080;
+    font-size: 3.5rem;
 }
 
 .block-index {

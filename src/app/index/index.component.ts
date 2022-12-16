@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { DataService, Detail, Wallet } from '../data.service';
-import { NumberSymbol } from '@angular/common';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
