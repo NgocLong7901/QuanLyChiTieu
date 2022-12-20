@@ -24,7 +24,7 @@ export class StatisticComponent implements OnInit {
   details: any;
   dataSpendchart: any;
   dataIncomechart: any;
-  chart: any;
+  chartSp: any;
   chartIn: any;
   dataInchartBar: any;
   chartBar: any;
@@ -46,13 +46,12 @@ export class StatisticComponent implements OnInit {
   selectChangeHandler(event: any) {
     this.selected = event.target.value;
   }
-  getDetailbyDate() {
-    let startDate = new Date(this.formDate.value.startDate);
-    var sdate = new Intl.DateTimeFormat("ja-JP").format(startDate);
-    let endDate = new Date(this.formDate.value.endDate);
-    var edate = new Intl.DateTimeFormat("ja-JP").format(endDate);
+  getDetailByDate() {
+    let start_Date = new Date(this.formDate.value.startDate);
+    var sdate = new Intl.DateTimeFormat("ja-JP").format(start_Date);
+    let end_Date = new Date(this.formDate.value.endDate);
+    var edate = new Intl.DateTimeFormat("ja-JP").format(end_Date);
     let username = this.authService.getLoggedInUserName();
-
     //details
     this.dataService.getDetailbyDate(username, sdate, edate).subscribe((data: Array<Detail>) => {
       this.details = data;
@@ -73,49 +72,44 @@ export class StatisticComponent implements OnInit {
     //data chart spend
     this.dataService.getDataSpendChart(username, sdate, edate).subscribe((data: any) => {
       this.dataSpendchart = data;
-      var dataSpendPie = new Array(0, 0, 0, 0, 0, 0, 0);
+      var dataSpendLine = new Array(0, 0, 0, 0, 0, 0, 0);
       for (var i = 0; i < data.length; i++) {
         switch (data[i][1]) {
           case 1:
-            dataSpendPie[0] = data[i][0];
+            dataSpendLine[0] = data[i][0];
             break;
           case 2:
-            dataSpendPie[1] = data[i][0];
+            dataSpendLine[1] = data[i][0];
             break;
           case 3:
-            dataSpendPie[2] = data[i][0];
+            dataSpendLine[2] = data[i][0];
             break;
           case 4:
-            dataSpendPie[3] = data[i][0];
+            dataSpendLine[3] = data[i][0];
             break;
           case 5:
-            dataSpendPie[4] = data[i][0];
+            dataSpendLine[4] = data[i][0];
             break;
           case 6:
-            dataSpendPie[5] = data[i][0];
+            dataSpendLine[5] = data[i][0];
             break;
           case 7:
-            dataSpendPie[6] = data[i][0];
+            dataSpendLine[6] = data[i][0];
             break;
         }
-        console.log("dataSpendPie: " + dataSpendPie);
       }
-      if (this.chart == null) {
-        this.chart = new Chart('canvas', {
-          type: 'pie',
+      console.log("dataSpendLine: " + dataSpendLine);
+      if (this.chartSp == null) {
+        this.chartSp = new Chart('canvasSp', {
+          type: 'line',
           data: {
             labels: ['Xăng dầu', 'Giải trí', 'Điện nước', 'Du lịch', 'Sức khỏe', 'Giáo dục', 'Mua sắm'],
             datasets: [{
-              data: dataSpendPie,
-              backgroundColor: [
-                '#fe6a6a',
-                '#fc4242',
-                '#ff1919',
-                '#e40000',
-                '#c10000',
-                '#a70202',
-                '#910101'
-              ],
+              data: dataSpendLine,
+              label: 'Chi tiêu',
+              fill: false,
+              borderColor: 'rgb(75, 192, 192)',
+              tension: 0.1
             }]
           },
           options: {
@@ -124,22 +118,17 @@ export class StatisticComponent implements OnInit {
         })
       }
       else {
-        this.chart.destroy();
-        this.chart = new Chart('canvas', {
-          type: 'pie',
+        this.chartSp.destroy();
+        this.chartSp = new Chart('canvasSp', {
+          type: 'line',
           data: {
             labels: ['Xăng dầu', 'Giải trí', 'Điện nước', 'Du lịch', 'Sức khỏe', 'Giáo dục', 'Mua sắm'],
             datasets: [{
-              data: dataSpendPie,
-              backgroundColor: [
-                '#fe6a6a',
-                '#fc4242',
-                '#ff1919',
-                '#e40000',
-                '#c10000',
-                '#a70202',
-                '#910101'
-              ],
+              data: dataSpendLine,
+              label: 'Chi tiêu',
+              fill: false,
+              borderColor: 'rgb(75, 192, 192)',
+              tension: 0.1
             }]
           },
           options: {
@@ -147,41 +136,39 @@ export class StatisticComponent implements OnInit {
           }
         })
       }
-
     });
     //data chart income
     this.dataService.getDataIncomeChart(username, sdate, edate).subscribe((data: any) => {
       this.dataIncomechart = data;
-      var dataInPie = new Array(0, 0, 0, 0);
+      var dataInLine = new Array(0, 0, 0, 0);
       for (var i = 0; i < data.length; i++) {
         switch (data[i][1]) {
           case 10:
-            dataInPie[0] = data[i][0];
+            dataInLine[0] = data[i][0];
             break;
           case 11:
-            dataInPie[1] = data[i][0];
+            dataInLine[1] = data[i][0];
             break;
           case 12:
-            dataInPie[2] = data[i][0];
+            dataInLine[2] = data[i][0];
             break;
           case 13:
-            dataInPie[3] = data[i][0];
+            dataInLine[3] = data[i][0];
             break;
         }
       }
+      console.log("dataInLine: " + dataInLine);
       if (this.chartIn == null) {
         this.chartIn = new Chart('canvasIn', {
-          type: 'pie',
+          type: 'line',
           data: {
             labels: ['Lương', 'Thưởng', 'Được tặng', 'Bán đồ'],
             datasets: [{
-              data: dataInPie,
-              backgroundColor: [
-                '#0261ff',
-                '#0050d4',
-                '#013892',
-                '#002665'
-              ],
+              data: dataInLine,
+              label: 'Thu nhập',
+              fill: false,
+              borderColor: 'rgb(75, 192, 192)',
+              tension: 0.1
             }]
           },
           options: {
@@ -192,17 +179,15 @@ export class StatisticComponent implements OnInit {
       else {
         this.chartIn.destroy();
         this.chartIn = new Chart('canvasIn', {
-          type: 'pie',
+          type: 'line',
           data: {
             labels: ['Lương', 'Thưởng', 'Được tặng', 'Bán đồ'],
             datasets: [{
-              data: dataInPie,
-              backgroundColor: [
-                '#0261ff',
-                '#0050d4',
-                '#013892',
-                '#002665'
-              ],
+              data: dataInLine,
+              label: 'Thu nhập',
+              fill: false,
+              borderColor: 'rgb(75, 192, 192)',
+              tension: 0.1
             }]
           },
           options: {
@@ -225,7 +210,6 @@ export class StatisticComponent implements OnInit {
         if (data[i].status == 0) {
           sum += data[i].price;
         }
-
         else {
           sumSpend += data[i].price;
         }

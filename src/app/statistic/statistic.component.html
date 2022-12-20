@@ -9,21 +9,23 @@
             </div>
             <div class="select">
                 <div class="date-select">
-                    <input class="select-radio" type="radio" id="date" name="fav_language" [value]="true" [(ngModel)]="showMe">
+                    <input class="select-radio" type="radio" id="date" name="fav_language" [value]="true"
+                        [(ngModel)]="showMe">
                     <label for="date">Thống kê theo ngày</label><br>
                 </div>
                 <div class="radio-select">
-                    <input class="select-radio" type="radio" id="year" name="fav_language" [value]="false" [(ngModel)]="showMe">
+                    <input class="select-radio" type="radio" id="year" name="fav_language" [value]="false"
+                        [(ngModel)]="showMe">
                     <label for="year">Thống kê theo năm</label><br>
                 </div>
             </div>
             <!-- date -->
-            <div class="pie" *ngIf="showMe">
+            <div class="line" *ngIf="showMe">
                 <div class="date" [formGroup]="formDate">
                     <input formControlName="startDate" class="input-date" type="date" value="Từ ngày">
                     -
                     <input formControlName="endDate" class="input-date" type="date" value="Đến ngày">
-                    <a class="btn-search" (click)="getDetailbyDate()"><i class="fas fa-search"></i></a>
+                    <a class="btn-search" (click)="getDetailByDate()"><i class="fas fa-search"></i></a>
                 </div>
                 <div class="tong">
                     <div class="thu">Tổng thu: {{sumIn|currency:"VND":"symbol"}}</div>
@@ -70,14 +72,14 @@
                     </tbody>
                 </table>
                 <div>
-                    <!-- chart Pie -->
-                    <div style="display: flex;">
+                    <!-- chart Line -->
+                    <div class="all-chart">
                         <div class="chart">
-                            <label *ngIf="chart" style="font-weight: bold;text-align: center;">CHI TIÊU</label>
-                            <canvas id="canvas">{{chart}}</canvas>
+                            <label *ngIf="chartSp" style="font-weight: bold;text-align: center;">Chi tiêu</label>
+                            <canvas id="canvasSp">{{chartSp}}</canvas>
                         </div>
                         <div class="chart">
-                            <label *ngIf="chartIn" style="font-weight: bold;text-align: center;">THU NHẬP</label>
+                            <label *ngIf="chartIn" style="font-weight: bold;text-align: center;">Thu nhập</label>
                             <canvas id="canvasIn">{{chartIn}}</canvas>
                         </div>
                     </div>

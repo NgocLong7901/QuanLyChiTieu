@@ -31,7 +31,7 @@ table th {
     border-bottom: solid 2px black;
 } */
 
-.pie {
+.line {
     font-size: 1.4rem;
     text-align: center;
 }
@@ -91,9 +91,9 @@ table th {
     margin-top: 70px;
 }
 
-.chart {
-    display: inline-block;
-    padding-left: 20px;
+.all-chart {
+    display: flex;
+    justify-content: space-around;
 }
 
 .canva {
